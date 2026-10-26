@@ -1,0 +1,38 @@
+server:
+  servlet:
+    encoding:
+      force-response: true
+
+spring:
+  application:
+    name: sfood_eai_external
+  profiles:
+    active: local
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+  mail:
+    host: sfood-com0c.mail.protection.outlook.com.
+    port: 25
+    username: no-reply@s-food.com
+    properties:
+      mail:
+        smtp:
+          auth: false
+        starttls:
+          enable: true
+
+springdoc:
+  swagger-ui:
+    enabled: 'true'
+    supportedSubmitMethods: '"patch"'
+  api-docs:
+    enabled: 'true'
+
+management:
+  server:
+    port: ${server.port}
+  endpoints:
+    web:
+      exposure:
+        include: info, refresh, health, beans, env, metrics
+      base-path: /management

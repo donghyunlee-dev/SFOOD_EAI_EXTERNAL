@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds">
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <springProperty scope="context" name="LOG_FILE_PATH" source="logging.file.file-path"/>
+    <springProperty scope="context" name="LOG_FILE_NAME" source="logging.file.file-name"/>
+    <springProperty scope="context" name="SLACK_WEBHOOK_URL" source="logging.slack.webhook-url"/>
+    <property name="CONSOLE_LOG_PATTERN"
+              value="${CONSOLE_LOG_PATTERN:-%clr(%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd'T'HH:mm:ss.SSSXXX}}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr(${LOGGED_APPLICATION_NAME:-}[%15.15t]){faint} %clr(${LOG_CORRELATION_PATTERN:-}){faint}%clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
+    <property name="FILE_LOG_PATTERN"
+              value="[%d{yyyy-MM-dd HH:mm:ss}:%-3relative] %-5level ${PID:-} --- [%15.15thread] %-40.40logger{36} : %msg%n"/>
+
+    <!-- 콘솔(STDOUT) -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>${CONSOLE_LOG_PATTERN}</Pattern>
+        </encoder>
+    </appender>
+
+    <!-- 파일(FILE) -->
+    <appender name="LOG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--     log 기록할 파일 위치 설정 -->
+        <file>${LOG_FILE_PATH}/${LOG_FILE_NAME}.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>${LOG_FILE_PATH}/${LOG_FILE_NAME}.%d{yyyy-MM-dd}_%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>7</maxHistory>
+            <totalSizeCap>3GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>error</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <file>${LOG_FILE_PATH}/${LOG_FILE_NAME}-error.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE_PATH}/${LOG_FILE_NAME}-error.%d{yyyy-MM-dd}_%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="SQL_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_FILE_PATH}/${LOG_FILE_NAME}-sql.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE_PATH}/${LOG_FILE_NAME}-sql.%d{yyyy-MM-dd}_%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="SLACK" class="com.sfood.eai.external.logger.SlackAppender">
+        <webhookUrl>${SLACK_WEBHOOK_URL}</webhookUrl>
+    </appender>
+
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+
+    <!-- log 레벨 설정 (logging.level.root=info)-->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="LOG_FILE" />
+        <appender-ref ref="ERROR_FILE"/>
+    </root>
+
+    <!--<springProfile name="local,dev">
+        <logger name="p6spy" level="DEBUG" additivity="true">
+            <appender-ref ref="LOG_FILE" />
+        </logger>
+    </springProfile>-->
+
+    <springProfile name="prod">
+        <!-- 아무것도 추가하지 않거나, 필요하다면 로그 레벨만 따로 제한 가능 -->
+        <logger name="p6spy" level="INFO" additivity="false">
+            <appender-ref ref="CONSOLE" />
+            <appender-ref ref="SQL_FILE" />
+        </logger>
+    </springProfile>
+
+    <logger name="com.sfood.eai.external" level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE" />
+    </logger>
+
+    <logger name="com.sfood.eai.external" level="ERROR" additivity="false">
+        <appender-ref ref="SLACK"/>
+        <appender-ref ref="LOG_FILE" />
+        <appender-ref ref="ERROR_FILE"/>
+    </logger>
+    <!-- log 레벨 설정 (org.springframework.web=debug)-->
+    <!--<logger name="org.springframework.web" level="DEBUG">
+        <appender-ref ref="FILE" />
+    </logger>-->
+
+</configuration>
