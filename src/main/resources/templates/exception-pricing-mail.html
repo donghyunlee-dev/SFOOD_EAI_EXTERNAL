@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                color: #333;
+                padding: 20px;
+            }
+
+            .title {
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 20px;
+                color: #2c3e50;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 14px;
+            }
+
+            th, td {
+                border: 1px solid #ccc;
+                padding: 10px;
+                vertical-align: top;
+                text-align: left;
+            }
+
+            th {
+                background-color: #f5f5f5;
+                font-weight: bold;
+            }
+
+            td p {
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <p><span style="font-size:18px"><strong>OMS 거래처별 예외단가 및 거래처그룹별 예외단가에 등록된 하위 품목의 단가 적용 종료 1~7일 전입니다.</strong><br/>
+        <strong>적용기간 연장 혹은 변경 시 단가 재 등록 부탁드립니다.</strong></span></p>
+        <div class="title"><h3>예외단가 종료일 알림</h3></div>
+        <!-- 헤더 -->
+        <table>
+            <thead>
+            <tr>
+                <th>거래처(그룹)코드</th>
+                <th>거래처(그룹)명</th>
+                <th>단가타입</th>
+                <th>OMS품목코드</th>
+                <th>OMS품목명</th>
+                <th>적용종료일</th>
+                <th>기안자</th>
+                <th>기안승인일자</th>
+                <th>GW비고</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- 데이터 바인딩 -->
+            <tr th:each="item : ${list}">
+                <td><p th:text="${item.partnerCode}"></p></td>
+                <td><p th:text="${item.partnerName}"></p></td>
+                <td><p th:text="${item.priceType}"></p></td>
+                <td><p th:text="${item.goodsCode}"></p></td>
+                <td><p th:text="${item.goodsName}"></p></td>
+                <td><p th:text="${item.endDate}"></p></td>
+                <td><p th:text="${item.approvalId}"></p></td>
+                <td><p th:text="${item.approvalDate}"></p></td>
+                <td><p th:text="${item.description}"></p></td>
+            </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

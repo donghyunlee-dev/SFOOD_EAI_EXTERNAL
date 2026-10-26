@@ -1,0 +1,287 @@
+[
+  {
+    "id": {
+      "companyCode": "C00000001",
+      "collectScheduleSeq": 100
+    },
+    "mallCode": "M0001",
+    "inMallCode": null,
+    "collectType": "S1",
+    "scheduleType": "S",
+    "collectStartDateTime": null,
+    "scheduleTermMin": null,
+    "scheduleTime": "00:01:10",
+    "collectYn": "Y",
+    "cronExpression": "10 1 0 * * ?"
+  },
+  {
+    "id": {
+      "companyCode": "C00000001",
+      "collectScheduleSeq": 101
+    },
+    "mallCode": "M0002",
+    "inMallCode": null,
+    "collectType": "S1",
+    "scheduleType": "S",
+    "collectStartDateTime": null,
+    "scheduleTermMin": null,
+    "scheduleTime": "00:01:20",
+    "collectYn": "Y",
+    "cronExpression": "20 1 0 * * ?"
+  },
+  {
+    "id": {
+      "companyCode": "C00000001",
+      "collectScheduleSeq": 119
+    },
+    "mallCode": "M0002",
+    "inMallCode": null,
+    "collectType": "S1",
+    "scheduleType": "S",
+    "collectStartDateTime": null,
+    "scheduleTermMin": null,
+    "scheduleTime": "07:00:00",
+    "collectYn": "Y",
+    "cronExpression": "0 0 7 * * ?"
+  },
+  {
+    "id": {
+      "companyCode": "C00000001",
+      "collectScheduleSeq": 102
+    },
+    "mallCode": "M0002",
+    "inMallCode": null,
+    "collectType": "C1",
+    "scheduleType": "S",
+    "collectStartDateTime": null,
+    "scheduleTermMin": null,
+    "scheduleTime": "00:01:20",
+    "collectYn": "Y",
+    "cronExpression": "20 1 0 * * ?"
+  },
+  {
+    "id": {
+      "companyCode": "C00000001",
+      "collectScheduleSeq": 103
+    },
+    "mallCode": "M0003",
+    "inMallCode": null,
+    "collectType": "S1",
+    "scheduleType": "S",
+    "collectStartDateTime": null,
+    "scheduleTermMin": null,
+    "scheduleTime": "00:01:30",
+    "collectYn": "Y",
+    "cronExpression": "30 1 0 * * ?"
+  },
+  {
+    "id": {
+      "companyCode": "C00000001",
+      "collectScheduleSeq": 104
+    },
+    "mallCode": "M0003",
+    "inMallCode": null,
+    "collectType": "C1",
+    "scheduleType": "S",
+    "collectStartDateTime": null,
+    "scheduleTermMin": null,
+    "scheduleTime": "00:01:30",
+    "collectYn": "Y",
+    "cronExpression": "30 1 0 * * ?"
+  },
+  {
+    "id": {
+      "companyCode": "C00000001",
+      "collectScheduleSeq": 105
+    },
+    "mallCode": "M0005",
+    "inMallCode": "CSMART",
+    "collectType": "S1",
+    "scheduleType": "S",
+    "collectStartDateTime": null,
+    "scheduleTermMin": null,
+    "scheduleTime": "11:55:00",
+    "collectYn": "Y",
+    "cronExpression": "0 55 11 * * ?"
+  },
+  {
+    "id": {
+      "companyCode": "C00000001",
+      "collectScheduleSeq": 106
+    },
+    "mallCode": "M0005",
+    "inMallCode": "EMART",
+    "collectType": "S1",
+    "scheduleType": "S",
+    "collectStartDateTime": null,
+    "scheduleTermMin": null,
+    "scheduleTime": "09:55:00",
+    "collectYn": "Y",
+    "cronExpression": "0 55 9 * * ?"
+  },
+  {
+    "id": {
+      "companyCode": "C00000001",
+      "collectScheduleSeq": 107
+    },
+    "mallCode": "M0005",
+    "inMallCode": "EVERYDAY",
+    "collectType": "S1",
+    "scheduleType": "S",
+    "collectStartDateTime": null,
+    "scheduleTermMin": null,
+    "scheduleTime": "12:55:00",
+    "collectYn": "Y",
+    "cronExpression": "0 55 12 * * ?"
+  },
+  {
+    "id": {
+      "companyCode": "C00000001",
+      "collectScheduleSeq": 108
+    },
+    "mallCode": "M0005",
+    "inMallCode": "LOSH01",
+    "collectType": "S1",
+    "scheduleType": "S",
+    "collectStartDateTime": null,
+    "scheduleTermMin": null,
+    "scheduleTime": "11:50:00",
+    "collectYn": "Y",
+    "cronExpression": "0 50 11 * * ?"
+  },
+  {
+    "id": {
+      "companyCode": "C00000001",
+      "collectScheduleSeq": 109
+    },
+    "mallCode": "M0005",
+    "inMallCode": "MAGN01",
+    "collectType": "S1",
+    "scheduleType": "S",
+    "collectStartDateTime": null,
+    "scheduleTermMin": null,
+    "scheduleTime": "12:35:00",
+    "collectYn": "Y",
+    "cronExpression": "0 35 12 * * ?"
+  },
+  {
+    "id": {
+      "companyCode": "C00000001",
+      "collectScheduleSeq": 110
+    },
+    "mallCode": "M0005",
+    "inMallCode": "MEGAMART",
+    "collectType": "S1",
+    "scheduleType": "S",
+    "collectStartDateTime": null,
+    "scheduleTermMin": null,
+    "scheduleTime": "11:55:00",
+    "collectYn": "Y",
+    "cronExpression": "0 55 11 * * ?"
+  },
+  {
+    "id": {
+      "companyCode": "C00000001",
+      "collectScheduleSeq": 111
+    },
+    "mallCode": "M0005",
+    "inMallCode": "NORDERS",
+    "collectType": "S1",
+    "scheduleType": "S",
+    "collectStartDateTime": null,
+    "scheduleTermMin": null,
+    "scheduleTime": "11:55:00",
+    "collectYn": "Y",
+    "cronExpression": "0 55 11 * * ?"
+  },
+  {
+    "id": {
+      "companyCode": "C00000002",
+      "collectScheduleSeq": 112
+    },
+    "mallCode": "M0001",
+    "inMallCode": null,
+    "collectType": "S1",
+    "scheduleType": "S",
+    "collectStartDateTime": null,
+    "scheduleTermMin": null,
+    "scheduleTime": "08:55:00",
+    "collectYn": "Y",
+    "cronExpression": "0 55 8 * * ?"
+  },
+  {
+    "id": {
+      "companyCode": "C00000002",
+      "collectScheduleSeq": 113
+    },
+    "mallCode": "M0002",
+    "inMallCode": null,
+    "collectType": "S1",
+    "scheduleType": "S",
+    "collectStartDateTime": null,
+    "scheduleTermMin": null,
+    "scheduleTime": "08:55:00",
+    "collectYn": "Y",
+    "cronExpression": "0 55 8 * * ?"
+  },
+  {
+    "id": {
+      "companyCode": "C00000002",
+      "collectScheduleSeq": 114
+    },
+    "mallCode": "M0002",
+    "inMallCode": null,
+    "collectType": "C1",
+    "scheduleType": "S",
+    "collectStartDateTime": null,
+    "scheduleTermMin": null,
+    "scheduleTime": "08:55:00",
+    "collectYn": "Y",
+    "cronExpression": "0 55 8 * * ?"
+  },
+  {
+    "id": {
+      "companyCode": "C00000001",
+      "collectScheduleSeq": 116
+    },
+    "mallCode": "M0002",
+    "inMallCode": null,
+    "collectType": "S2",
+    "scheduleType": "C",
+    "collectStartDateTime": "2025-04-18T00:00:00",
+    "scheduleTermMin": 10,
+    "scheduleTime": null,
+    "collectYn": "Y",
+    "cronExpression": "0 */10 0-23 * * ?"
+  },
+  {
+    "id": {
+      "companyCode": "C00000001",
+      "collectScheduleSeq": 117
+    },
+    "mallCode": "M0003",
+    "inMallCode": null,
+    "collectType": "S2",
+    "scheduleType": "C",
+    "collectStartDateTime": "2025-04-18T00:00:00",
+    "scheduleTermMin": 10,
+    "scheduleTime": null,
+    "collectYn": "Y",
+    "cronExpression": "0 */10 0-23 * * ?"
+  },
+  {
+    "id": {
+      "companyCode": "C00000002",
+      "collectScheduleSeq": 118
+    },
+    "mallCode": "M0002",
+    "inMallCode": null,
+    "collectType": "S2",
+    "scheduleType": "C",
+    "collectStartDateTime": "2025-04-18T00:00:00",
+    "scheduleTermMin": 10,
+    "scheduleTime": null,
+    "collectYn": "Y",
+    "cronExpression": "0 */10 0-23 * * ?"
+  }
+]

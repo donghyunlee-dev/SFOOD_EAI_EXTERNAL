@@ -1,0 +1,59 @@
+{
+  "mall_invoice_list": [
+    {
+      "market_mall_code": "M0002",
+      "order_invoice_list": [
+        {
+          "order_merge_no" : "OR20251028M000200188",
+          "order_detail_seq" : 1,
+          "market_order_no" : "2510281426000115",
+          "market_order_sub_no" : "412168",
+          "invoice_no" : "316461941132",
+          "order_status_code" : "OS2030",
+          "invoice_send_date" : null,
+          "hope_delv_date" : "2025-10-29T15:00:00.000Z"
+        },
+        {
+          "order_merge_no" : "OR20251028M000200188",
+          "order_detail_seq" : 1,
+          "market_order_no" : "2510281426000115",
+          "market_order_sub_no" : "412168",
+          "invoice_no" : "316461969246",
+          "order_status_code" : "OS2030",
+          "invoice_send_date" : null,
+          "hope_delv_date" : "2025-10-29T15:00:00.000Z"
+        },
+        {
+          "order_merge_no" : "OR20251028M000200199",
+          "order_detail_seq" : 3,
+          "market_order_no" : "2510281418000103",
+          "market_order_sub_no" : "412151",
+          "invoice_no" : "316461941316",
+          "order_status_code" : "OS2030",
+          "invoice_send_date" : null,
+          "hope_delv_date" : "2025-10-29T15:00:00.000Z"
+        },
+        {
+          "order_merge_no" : "OR20251029M000200147",
+          "order_detail_seq" : 1,
+          "market_order_no" : "2510291930000240",
+          "market_order_sub_no" : "413077",
+          "invoice_no" : "316461956112",
+          "order_status_code" : "OS2030",
+          "invoice_send_date" : null,
+          "hope_delv_date" : "2025-10-30T15:00:00.000Z"
+        },
+        {
+          "order_merge_no" : "OR20251029M000200156",
+          "order_detail_seq" : 3,
+          "market_order_no" : "2510291800000226",
+          "market_order_sub_no" : "413036",
+          "invoice_no" : "316461956355",
+          "order_status_code" : "OS2030",
+          "invoice_send_date" : null,
+          "hope_delv_date" : "2025-10-30T15:00:00.000Z"
+        }
+      ]
+    }
+  ]
+}
