@@ -1,0 +1,2 @@
+# SFOOD_EAI_EXTERNAL
+SFOOD 외부 연동 서비스
